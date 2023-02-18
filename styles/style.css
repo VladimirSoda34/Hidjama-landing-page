@@ -1,43 +1,55 @@
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@500;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;1000&display=swap");
 
 * {
   margin: 0;
   padding: 0;
 
   box-sizing: border-box;
+
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+}
+
+h1,
+h2,
+h3 {
+  color: azure;
 }
 
 body {
-  font-family: "Poppins", sans-serif;
+  font-family: "Nunito", sans-serif;
   background: linear-gradient(113.49deg, #3afffd -17.3%, #2c4e6a 52.12%)
     no-repeat;
   /* background: linear-gradient(113.49deg, #3afffd -17.3%, #1c3245 52.12%)
     no-repeat; */
   font-weight: 500;
-  color: aliceblue;
+  color: rgb(225 229 233);
   /* background-image: url(../images/pattern.jpg); */
   /* background-size: 250px; */
+  overflow-x: hidden;
 }
 
 /*  */
 
-
 .header {
-  
   max-width: 1197px;
   margin: 0 auto;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 15px 20px 15px 110px;
+  padding: 15px 20px;
 }
 
 .header__logo {
   display: block;
-  width: 133px;
-  height: 25px;
-  background-image: url(../images/logo.jpg) no-repeat;
+  width: 201px;
+  height: 70px;
+  background-image: url(../images/logo.png);
+  background-repeat: no-repeat;
   background-size: 200px;
+  border-radius: 10px;
+  top: 4px;
+  position: relative;
 }
 
 .header__list {
@@ -53,7 +65,7 @@ body {
 }
 
 .header__item_gradient {
-  background: linear-gradient(214.02deg, #b75cff 6.04%, #671ae4 92.95%);
+  background: linear-gradient(214.02deg, #14ececc2 6.04%, #1dd6a1 92.95%);
   border-radius: 10px;
   padding: 10px 20px;
 }
@@ -73,7 +85,6 @@ body {
 
 .main__section {
   /* position: absolute; */
-  
 
   margin-bottom: 30px;
 }
@@ -111,11 +122,12 @@ body {
 
 .main__text {
   flex-basis: 490px;
+  margin-bottom: 20px;
 }
 
 .main__title {
   font-size: 50px;
-  font-weight: 700;
+  font-weight: 1000;
   line-height: 1.2;
 }
 
@@ -133,11 +145,11 @@ body {
 
 .main__desk {
   padding: 10px;
-  font-size: 25px;
+  font-size: 20px;
   line-height: 1.5;
-  color: rgb(255, 255, 255);
   /* box-shadow: 2px 2px 20px #3afffd; */
   border-radius: 10px;
+  margin-bottom: 20px;
 }
 
 .main__btn {
@@ -147,16 +159,15 @@ body {
   border-radius: 10px;
   background: rgba(255, 255, 255, 0.1);
   padding: 10px 20px;
+  margin-right: 20px;
 }
 
 .gradient {
   background: linear-gradient(214.02deg, #14ececc2 6.04%, #1dd6a1 92.95%);
-  /* background-color: #1dd6a1bd; */
-  margin-right: 20px;
 }
 
 .main__image {
-  flex-basis: calc(100% - 490px - 116px);
+  flex-basis: calc(100% - 490px - 50px);
   margin: auto 0;
 }
 
@@ -172,10 +183,11 @@ body {
   /* display: block; */
   /* background-repeat:repeat; */
   background-image: url(../images/pattern.png);
-  background-size: 200px;
-  height: 100px;
-  width: 100%;
-  border-radius: 20px;
+  background-size: 170px;
+  height: 74px;
+  width: calc(100% - 300px);
+  border-radius: 50px;
+  margin: 40px auto;
 }
 /* section */
 
@@ -185,19 +197,30 @@ body {
   line-height: 1.2;
   text-align: center;
   margin-bottom: 20px;
+  opacity: 0;
+  position: relative;
+
+  transform: translate(0px, 120%);
+  transition: all .8s ease 0s;
+
 }
+
+.section__title_middle._active {
+  transform: translate(0px, 0px);
+  opacity: 1;
+}
+
+
 
 .section__desc_middle {
   font-size: 20px;
   line-height: 1.8;
-  color: rgba(255, 255, 255, 0.5);
   text-align: center;
 }
 
 .section {
   display: flex;
   justify-content: space-between;
-  margin-bottom: 150px;
 }
 
 .section__text {
@@ -208,11 +231,10 @@ body {
   font-size: 30px;
   font-weight: 700;
   line-height: 1.2;
-  padding-top: 100px;
 }
 
 .section__image {
-  flex-basis: calc(100% - 490px - 116px);
+  flex-basis: calc(100% - 490px - 50px);
   margin: auto 0;
 }
 
@@ -220,4 +242,53 @@ body {
   width: 100%;
   border-radius: 20px;
   box-shadow: 2px 2px 20px #3afffd;
+}
+
+/*  */
+.profit {
+  display: flex;
+  flex-wrap: wrap;
+  align-content: space-between;
+  justify-content: space-around;
+  gap: 15px 0;
+  position: relative;
+}
+
+.profit__inner {
+  display: flex;
+  opacity: 0;
+  transform: translate(0px, 120%);
+  transition: all .8s ease 0s;
+
+}
+
+.profit__inner._active {
+  transform: translate(0px, 0px);
+  opacity: 1;
+}
+
+.profit__inner_img {
+  width: 87px;
+}
+
+.profit__inner p {
+  align-items: center;
+  margin: auto 0;
+  padding: 0 15px;
+  font-size: 20px;
+  width: 333px;
+}
+
+/*  */
+
+.section__text_inn {
+  display: flex;
+}
+
+.point {
+  position: relative;
+  width: 35px;
+  height: 35px;
+  margin: auto 0;
+  top: -8.5px;
 }
