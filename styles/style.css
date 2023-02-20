@@ -27,6 +27,8 @@ body {
   /* background-image: url(../images/pattern.jpg); */
   /* background-size: 250px; */
   overflow-x: hidden;
+  -webkit-overflow-scrolling: touch; /* Для Safari и Chrome на iOS */
+-ms-overflow-style: -ms-autohiding-scrollbar; /* Для Internet Explorer и Microsoft Edge */
 }
 
 /*  */
@@ -36,26 +38,31 @@ body {
   margin: 0 auto;
   display: flex;
   justify-content: space-between;
+  text-align: center;
   align-items: center;
   padding: 15px 20px;
+  font-size: calc(10px + 6 * ((100vw - 375px) / (1200 - 375)));
+
 }
 
 .header__logo {
   display: block;
-  width: 201px;
-  height: 70px;
+  width: 196px;
+  height: 76px;
   background-image: url(../images/logo.png);
   background-repeat: no-repeat;
   background-size: 200px;
   border-radius: 10px;
-  top: 4px;
   position: relative;
+  box-shadow: 2px 2px 20px #3afffd;
+  background-color: #fff;
+  left: 1px;
 }
 
 .header__list {
   display: flex;
   list-style-type: none;
-  gap: 40px;
+  gap: calc(5px + 55 * ((100vw - 375px) / (1200 - 375)));
   align-items: center;
 }
 
@@ -121,17 +128,18 @@ body {
 }
 
 .main__text {
-  flex-basis: 490px;
+  flex-basis: 60%;
   margin-bottom: 20px;
 }
 
 .main__title {
-  font-size: 50px;
+  /* font-size: 50px; */
+  font-size: calc(20px + 30 * ((100vw - 375px) / (1200 - 375)));
   font-weight: 1000;
   line-height: 1.2;
 }
 
-.main__title span {
+/* .main__title span {
   background-clip: text;
   -webkit-background-clip: text;
   color: transparent;
@@ -141,11 +149,12 @@ body {
     #b75cff 6.04%,
     #671ae4 92.95%
   );
-}
+} */
 
 .main__desk {
-  padding: 10px;
-  font-size: 20px;
+  padding: 0 10px;
+  /* font-size: 20px; */
+  font-size: calc(12px + 8 * ((100vw - 375px) / (1200 - 375)));
   line-height: 1.5;
   /* box-shadow: 2px 2px 20px #3afffd; */
   border-radius: 10px;
@@ -153,7 +162,7 @@ body {
 }
 
 .main__btn {
-  font-size: 20px;
+  font-size: calc(12px + 8 * ((100vw - 375px) / (1200 - 375)));
   color: #fff;
   text-decoration: none;
   border-radius: 10px;
@@ -167,7 +176,7 @@ body {
 }
 
 .main__image {
-  flex-basis: calc(100% - 490px - 50px);
+  flex-basis: 40%;
   margin: auto 0;
 }
 
@@ -180,33 +189,47 @@ body {
 /*  */
 
 .pattern {
-  /* display: block; */
-  /* background-repeat:repeat; */
+  
   background-image: url(../images/pattern.png);
   background-size: 170px;
   height: 74px;
-  width: calc(100% - 300px);
+  max-width: 800px;
+  min-width: 300px;
+  width: auto;
   border-radius: 50px;
   margin: 40px auto;
 }
 /* section */
 
 .section__title_middle {
-  font-size: 40px;
+  font-size: calc(24px + 16 * ((100vw - 375px) / (1200 - 375)));
   font-weight: 700;
   line-height: 1.2;
   text-align: center;
   margin-bottom: 20px;
-  opacity: 0;
   position: relative;
-
+  
+  opacity: 0;
   transform: translate(0px, 120%);
-  transition: all .8s ease 0s;
+  -webkit-transform: translate(0px, 120%);
+-moz-transform: translate(0px, 120%);
+-ms-transform: translate(0px, 120%);
+-o-transform: translate(0px, 120%);
 
+
+  transition: all .8s ease 0s;
+  -webkit-transition: all .8s ease 0s;
+  -moz-transition: all .8s ease 0s;
+  -ms-transition: all .8s ease 0s;
+  -o-transition: all .8s ease 0s;
 }
 
-.section__title_middle._active {
+.section__title_middle._active, .section__text._active, .section__image._active, .profit__inner._active {
   transform: translate(0px, 0px);
+  -webkit-transform: translate(0px, 0px);
+-moz-transform: translate(0px, 0px);
+-ms-transform: translate(0px, 0px);
+-o-transform: translate(0px, 0px);
   opacity: 1;
 }
 
@@ -224,24 +247,76 @@ body {
 }
 
 .section__text {
-  flex-basis: 490px;
+  flex-basis: 60%;
+  padding: 0 10px;
+
+
+  opacity: 0;
+  transform: translateX(800px);
+  -webkit-transform: translate(800px);
+  -moz-transform: translate(800px);
+  -ms-transform: translate(800px);
+  -o-transform: translate(800px);
+
+  transition: all .8s ease 0s;
+  -webkit-transition: all .8s ease 0s;
+  -moz-transition: all .8s ease 0s;
+  -ms-transition: all .8s ease 0s;
+  -o-transition: all .8s ease 0s;
+
 }
 
+
+
 .section__title {
-  font-size: 30px;
+  font-size: calc(24px + 16 * ((100vw - 375px) / (1200 - 375)));
   font-weight: 700;
   line-height: 1.2;
+  margin-bottom: 15px;
 }
 
 .section__image {
-  flex-basis: calc(100% - 490px - 50px);
+  flex-basis: 40%;
   margin: auto 0;
+
+  opacity: 0;
+  transform: translateX(-800px);
+  -webkit-transform: translate(-800px);
+  -moz-transform: translate(-800px);
+  -ms-transform: translate(-800px);
+  -o-transform: translate(-800px);
+
+  transition: all .8s ease 0s;
+  -webkit-transition: all .8s ease 0s;
+  -moz-transition: all .8s ease 0s;
+  -ms-transition: all .8s ease 0s;
+  -o-transition: all .8s ease 0s;
+
 }
+
+
 
 .section__img {
   width: 100%;
   border-radius: 20px;
   box-shadow: 2px 2px 20px #3afffd;
+}
+
+@media (max-width:650px ){
+  .section__image {
+    display: none;
+
+  }
+  .section__title {
+
+    text-align: center;
+  }
+  .section__text {
+    margin: 0 auto;
+    padding: 0;
+    min-width: 308px;
+    /* flex-basis: 99%; */
+  }
 }
 
 /*  */
@@ -257,25 +332,33 @@ body {
 .profit__inner {
   display: flex;
   opacity: 0;
+
   transform: translate(0px, 120%);
+  -webkit-transform: translate(0px, 120%);
+  -moz-transform: translate(0px, 120%);
+  -ms-transform: translate(0px, 120%);
+  -o-transform: translate(0px, 120%);
+
   transition: all .8s ease 0s;
+  -webkit-transition: all .8s ease 0s;
+  -moz-transition: all .8s ease 0s;
+  -ms-transition: all .8s ease 0s;
+  -o-transition: all .8s ease 0s;
 
 }
 
-.profit__inner._active {
-  transform: translate(0px, 0px);
-  opacity: 1;
-}
+
 
 .profit__inner_img {
-  width: 87px;
+  width: calc(38px + 49 * ((100vw - 375px) / (1200 - 375)));
+  height: calc(38px + 49 * ((100vw - 375px) / (1200 - 375)));
 }
 
 .profit__inner p {
   align-items: center;
   margin: auto 0;
   padding: 0 15px;
-  font-size: 20px;
+  font-size: calc(16px + 4 * ((100vw - 375px) / (1200 - 375)));
   width: 333px;
 }
 
@@ -287,8 +370,8 @@ body {
 
 .point {
   position: relative;
-  width: 35px;
-  height: 35px;
+  width: calc(15px + 20 * ((100vw - 240px) / (1200 - 240)));
+  height: calc(15px + 20 * ((100vw - 240px) / (1200 - 240)));
   margin: auto 0;
   top: -8.5px;
 }

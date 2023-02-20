@@ -37,5 +37,6 @@ scrollTop = window.scrollY || document.documentElement.scrollTop;
 
 return { top: rect.top + scrollTop, left: rect.left + scrollLeft}
 }
-animOnScroll()
+setTimeout(animOnScroll, 1000)
+
 }
