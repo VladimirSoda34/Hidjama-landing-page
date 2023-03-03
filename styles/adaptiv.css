@@ -1,0 +1,100 @@
+@media (max-width: 1100px) {
+  #example {
+    display: none;
+  }
+  a[href="#example"] {
+    display: none;
+  }
+}
+
+@media (max-width: 650px) {
+  #how {
+    flex-direction: column-reverse;
+  }
+  #how .section {
+    display: flex;
+    flex-direction: column;
+  }
+  .main__video {
+    margin: 0 auto;
+    right: 0;
+    max-width: 300px;
+  }
+  #feature .section__image {
+    display: none;
+  }
+  .section__image {
+    padding: 0px 20px;
+    margin: 18px auto 20px;
+
+  }
+  
+  .section__text {
+    margin: 0 auto;
+    padding: 0;
+  }
+  
+}
+
+@media (max-width: 450px) {
+  
+  .point_rev {
+    margin: 6px auto;
+  }
+  .section__text_slider {
+    margin: auto 10px;
+  }
+  .main__desk {
+    margin-bottom: 20px;
+  }
+}
+@media (max-width: 405px) {
+  ul .main__btn  {
+    padding: 5px 10px;
+  }
+  .title__br {
+    display: none;
+  }
+  /* .header__list{
+    gap: 12px;
+  } */
+  .header__list span {
+    display: none;
+  }
+}
+@media (max-width: 350px) {
+  .conteiner {
+    padding: 0 5px;
+  }
+  .header__item_gradient {
+    padding: 5px 5px;
+  }
+}
+@media (max-width: 330px) {
+  
+
+  .section__text {
+    margin-bottom: 30px;
+  }
+
+  .section__text_slider {
+    margin: 15px 17px;
+}
+
+  .main__btn {
+    padding: 5px 10px;
+  }
+  .iframe-review iframe {
+    margin-left: 0;
+  }
+  #rev, #feature {
+    margin-top: 40px;
+  }
+
+  .itcss {
+    margin-bottom: 30px;
+  }
+  
+}
+
+

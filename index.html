@@ -4,56 +4,165 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Hijama</title>
+    <link rel="shortcut icon" href="./logo.ico" sizes="any" />
+
+    <title>ПравдаЧат</title>
     <link rel="stylesheet" href="./styles/normalize.min.css" />
     <link rel="stylesheet" href="./styles/style.css" />
+    <link rel="stylesheet" href="./styles/adaptiv.css" />
+    <link rel="stylesheet" href="./styles/simple-adaptive-slider.css" />
+    <link rel="stylesheet" href="./styles/modal.css" />
+
     <script src="./js/scripts.js" defer></script>
+    <script src="./js/scroll.js" defer></script>
+    <script src="./js/simple-adaptive-slider.js" defer></script>
+
+    <script src="./js/btnUp.js" defer></script>
+    <script src="./js/modal.js" defer></script>
   </head>
   <body>
+    <!-- Modal -->
+    <div class="modalBackground">
+      <div class="modalActive">
+        <div class="modalClose">
+          <img src="/images/close.svg" width="12" alt="#" />
+        </div>
+        <div class="modalWindow">
+          <img
+            id="modal__logo"
+            class="modal__logo"
+            src="./images/logo/logo.png"
+            alt="#"
+          />
+          <div class="modal__title">Связь с нами</div>
+          <div class="modal__desk">
+            Оставьте контакты,<br />
+            мы позвоним
+          </div>
+          <div class="form">
+            <form action="./telegram.php" method="post">
+              <label for="name"><div class="modal__desk">Имя:</div></label>
+
+              <input
+                type="text"
+                id="name"
+                name="name"
+                required
+                minlength="2"
+                maxlength="12"
+                size="10"
+              />
+              <br /><br />
+              <label for="phone"><div class="modal__desk">Телефон:</div></label>
+              <input type="tel" id="phone" name="phone" required />
+              <input id="submit" class="modal__btn" type="submit" />
+            </form>
+          </div>
+          <div class="modal__desk">
+            или напишите нам в <a href="https://t.me/#">Telegram</a>
+          </div>
+          <a class="logo__telegram" href="https://t.me/#"
+            ><img src="./images/telegram-logo.png" alt="#"
+          /></a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Header -->
 
     <header class="header">
       <a href="#" class="header__logo"></a>
       <nav class="header__nav">
         <ul class="header__list">
-          <li class="header__item">
-            <a href="#" class="header__link">Collections</a>
+          <li class="header__link">
+            <a href="#how" class="header__link">Как <span>воздействует</span> </a>
           </li>
           <li class="header__item">
-            <a href="#" class="header__link">Feature</a>
+            <a href="#where" class="header__link"
+              >Польза  <span><span>терапии</span> </span>
+            </a>
+          </li>
+          
+          <li class="header__item">
+            <a href="#rev" class="header__link">Отзывы</a>
           </li>
           <li class="header__item">
-            <a href="#" class="header__link">FAQ</a>
+            <a href="#prise" class="header__link">Цена</a>
           </li>
-          <li class="header__item header__item_gradient">
-            <a href="#" class="header__link">Запись на приём</a>
-          </li>
+          <a href="#" class="main__btn trigger">Написать нам</a>
         </ul>
       </nav>
     </header>
     <div class="conteiner">
-      <section class="main__section hosting">
-         
-        <div class="main">
+      <!-- First screen -->
+      <section class="section__main">
+        <div class="main hosting">
           <div class="main__text">
             <h1 class="main__title">Хиджама-терапия</h1>
             <p class="main__desk">
               Задача Хиджама-терапии – освободить организм от застоявшейся,
               «старой» крови, активизировать ее обновление, дать возможность
               свежей крови усилить приток к очагам патологии, снять клинические
-              проявления заболевания, стимулировать иммунитет.
+              проявления заболевания, стимулировать иммунитет
             </p>
-            <a class="main__btn gradient" href="#">Запись на приём</a>
-            <a class="main__btn" href="#">Узнать подробнее</a>
+            <a class="main__btn trigger" href="#">Получить услугу</a>
           </div>
           <div class="main__image">
-            <img class="main__img" src="images/master.jpg" alt="Gallery" />
+            <img
+              style="width: 100%"
+              src="images/h-pic.jpg"
+              alt="Gallery"
+            />
           </div>
         </div>
       </section>
-      <div class="pattern"></div>
 
-      <section>
-        <h2 class="section__title_middle _anim-items">Польза терапии</h2>
+      <!-- <div class="pattern"></div> -->
+
+      <!-- How -->
+
+      <section id="how">
+        <h3 class="section__title">Как воздействует Хиджама</h3>
+        <div class="section">
+          <div class="section__image _anim-items">
+            <!-- <video controls class="main__video" autoplay loop>
+              <source src="./video/description.mp4" type="video/mp4" />
+              <source src="./video/description.webm" type="video/webm" />
+            </video> -->
+            <div class="iframe-how">
+              <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/Q4BNXhdrW38" title="YouTube video player" frameborder="0" allow="accelerometer;  clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            </div>
+          </div>
+          <div class="section__text _anim-items">
+            <div class="section__text_inn">
+              <p class="main__desk">
+                <img class="point" src="./images/icons/point.png" alt="#" />
+                Уходит боль, нормализуются показатели гомеостаза
+              </p>
+            </div>
+            <div class="section__text_inn">
+              <p class="main__desk">
+                <img class="point" src="./images/icons/point.png" alt="#" />
+                Вместо застоявшейся крови, вырабатывается новая кровь, которая
+                дает ни с чем не сравнимый эффект омоложения, оздоровления,
+                укрепления иммунитета и общего улучшения самочувствия.
+              </p>
+            </div>
+            <div class="section__text_inn">
+              <p class="main__desk">
+                <img class="point" src="./images/icons/point.png" alt="#" />
+                С помощью нашего специалиста по Хиджама-терапии Вы сможете
+                избавиться от многих проблем, связанных с Вашим здоровьем
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Where -->
+
+      <section id="where">
+        <h2 class="section__title_middle _anim-items">Польза терапии:</h2>
         <div class="profit _anim-items">
           <div class="profit__inner _anim-items">
             <img
@@ -107,67 +216,169 @@
             </p>
           </div>
         </div>
-        
-
-        <div class="pattern"></div>
-        <div class="section">
-          <div class="section__image _anim-items">
-            <img class="section__img" src="images/h-pic-1.jpg" alt="Gallery" />
-          </div>
-          <div class="section__text _anim-items">
-            <h3 class="section__title">Проведение процедуры</h3>
-            <div class="section__text_inn">
-              <img class="point" src="./images/icons/point.png" alt="" />
-              <p class="main__desk">
-                Определяют показания для процедуры, очередность постановки, количество используемых банок, время их экспозиции
-              </p>
-            </div>
-            <div class="section__text_inn">
-              <img class="point" src="./images/icons/point.png" alt="" />
-              <p class="main__desk">
-                Определяют точки на теле, на которые необходимо провести
-                процедуру
-              </p>
-            </div>
-            <div class="section__text_inn">
-              <img class="point" src="./images/icons/point.png" alt="" />
-              <p class="main__desk">
-                Устанавливают специальные вакуумные банки для оттягивания
-                грязной застоявшейся крови к поверхности кожи
-              </p>
-            </div>
-            <div class="section__text_inn">
-              <img class="point" src="./images/icons/point.png" alt="" />
-              <p class="main__desk">
-                Затем делают небольшие надрезы (проколы), ставят банки повторно
-                и убирают кровь
-              </p>
-            </div>
-            <a class="main__btn gradient" href="#">Запись на приём</a>
-          </div>
-        </div>
-
-        <div class="pattern"></div>
-        <div class="section">
-          <div class="section__text _anim-items">
-            <h3 class="section__title">Эффект от процедуры</h3>
-            <p class="main__desk">
-              Уходит боль, нормализуются показатели гомеостаза. Вместо
-              застоявшейся крови, вырабатывается новая кровь, которая дает ни с
-              чем не сравнимый эффект омоложения, оздоровления, укрепления
-              иммунитета и общего улучшения самочувствия. <br><br> С помощью нашего
-              специалиста по Хиджама-терапии Вы сможете избавиться от многих
-              проблем, связанных с Вашим здоровьем.
-            </p>
-            <a class="main__btn gradient" href="#">Запись на приём</a>
-          </div>
-          <div class="section__image _anim-items">
-            <img class="section__img" src="images/h-pic-2.jpg" alt="Gallery" />
-          </div>
-        </div>
-
       </section>
-      
+
+      <!-- Rev -->
+      <section id="rev">
+        <h2 class="section__title_middle _active">Отзывы</h2>
+        <div class="itcss">
+          <div class="itcss__wrapper">
+            <div class="itcss__items">
+              <div class="itcss__item">
+                <h3 class="section__title">
+                  Архип, егирь
+                    </h3>
+                <div class="section">
+                  <div class="iframe-review">
+                    <img class="review__img" src="./images/photo.jpg" alt="">
+                  </div>
+                  <div class="section__text_slider">
+                    
+                    
+
+                    <p class="main__desk">
+                      &nbsp;&nbsp;&nbsp;&nbsp;"Приятное место, хожу регулярно на бочку, массаж и хиджаму именно к специалисту Наврузу. Очень хороший парень, делает от души.
+                      Всегда чисто и такие сотрудники гостеприимные, чувствую себя как дома 👍. Спасибо"
+                    </p>
+
+                    <a class="main__btn trigger" href="#">Получить услугу</a>
+                  </div>
+                </div>
+              </div>
+              <div class="itcss__item">
+                <h3 class="section__title">
+                  Станислав, архитектор
+                    </h3>
+                <div class="section">
+                  <div class="iframe-review">
+                    <img class="review__img" src="./images/photo.jpg" alt="">
+                  </div>
+                  <div class="section__text_slider">
+                    
+                    
+
+                    <p class="main__desk">
+                      &nbsp;&nbsp;&nbsp;&nbsp;"Приятное место, хожу регулярно на бочку, массаж и хиджаму именно к специалисту Наврузу. Очень хороший парень, делает от души.
+                      Всегда чисто и такие сотрудники гостеприимные, чувствую себя как дома 👍. Спасибо
+                    </p>
+
+                    <a class="main__btn trigger" href="#">Получить услугу</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <button
+            class="itcss__btn itcss__btn_prev"
+            role="button"
+            data-slide="prev"
+          ></button>
+          <button
+            class="itcss__btn itcss__btn_next"
+            role="button"
+            data-slide="next"
+          ></button>
+        </div>
+      </section>
+
+      <!-- Prise -->
+
+      <section>
+        <h3 class="section__title_middle _active">
+          Получи услугу Хиджама терапии 
+        </h3>
+        <div class="prise__desc">
+          Стоимость услуги:&nbsp;&nbsp; <s> <i>7500</i> </s> &nbsp;от&nbsp;<span
+            >5000₽</span
+          >
+        </div>
+        <div id="prise" class="section">
+          <div class="section__text _anim-items">
+            <div class="prise__title_low">
+              <p>Свяжись с нами и узнай о других возможностях востановления здоровья</p>
+            </div>
+            <div class="section__text_inn">
+              <p class="main__desk">
+                <img class="point" src="./images/icons/point.png" alt="#" />
+                Практика 
+              </p>
+            </div>
+            <div class="section__text_inn">
+              <p class="main__desk">
+                <img class="point" src="./images/icons/point.png" alt="#" />
+                Практика
+              </p>
+            </div>
+            <div class="section__text_inn">
+              <p class="main__desk">
+                <img class="point" src="./images/icons/point.png" alt="#" />
+                Практика
+              </p>
+            </div>
+            <div class="section__text_inn">
+              <p class="main__desk">
+                <img class="point" src="./images/icons/point.png" alt="#" />
+                Практика
+              </p>
+            </div>
+          </div>
+          <div class="section__image _anim-items">
+            <div class="prise__form">
+              <div class="modalWindow">
+                <div class="form">
+                  <form action="./telegram.php" method="post">
+                    <label for="name"
+                      ><div class="modal__desk">Имя:</div></label
+                    >
+
+                    <input
+                      type="text"
+                      id="name"
+                      name="name"
+                      required
+                      minlength="2"
+                      maxlength="12"
+                      size="10"
+                    />
+                    <br /><br />
+                    <label for="phone"
+                      ><div class="modal__desk">Телефон:</div></label
+                    >
+                    <input type="tel" id="phone" name="phone" required />
+                    <input id="submit" class="modal__btn" type="submit" />
+                  </form>
+                </div>
+                <div style="text-align: center" class="modal__desk">
+                  или напишите нам в
+                  <div class="prise__logo-telegram">
+                    <a href="https://t.me/#">
+                      <p>Telegram</p>
+                      <img src="./images/telegram-logo.png" alt="#"
+                    /></a>
+                  </div>
+                </div>
+                <a class="logo__telegram" href="https://t.me/#"></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Button Up low scroling -->
+      <div class="btn-up__wrapper"><div class="btn-up btn-up_hide"></div></div>
+      <!--  -->
     </div>
+
+    <!-- footer -->
+
+    <footer class="footer">
+      <img class="footer__logo" src="./images/logo/logo.png" alt="#" />
+      <div class="footer__contacts">
+        <p>Контактная информация:</p>
+        <span> <a href="tel:+7 918 682 6930">+7 918 682 6930</a> </span> /
+        <a href="https://t.me/#">telegram @#</a>
+      </div>
+      <div class="footer-polic">Посещая страницы нашего сайта и заполняя форму обратной связи, Вы соглашаетесь с <a href="https://rosstat.gov.ru/politika-konfidencialnosti">Политикой конфиденциальности</a> и спользование файлов cookie</div>
+    </footer>
   </body>
 </html>
